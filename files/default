@@ -1,0 +1,24 @@
+server {
+    listen 8080;
+
+    root /var/www;
+    index index.php index.html index.htm;
+
+    # Make site accessible from http://localhost/
+    server_name localhost;
+
+    # PHP
+    location ~ \.php$ {
+        try_files $uri =404;
+        fastcgi_param  HTTPS on;
+        fastcgi_pass   unix:/var/run/php5-fpm.sock;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME /var/multrix/web/api/index.php;
+        fastcgi_intercept_errors on;
+        include fastcgi_params;
+    }
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}

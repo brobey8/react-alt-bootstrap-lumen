@@ -1,0 +1,9 @@
+/node_modules
+/.idea
+/.sass-cache
+/_projectfiles
+/bower_components
+/puphpet
+/src/sass/.sass-cache
+.DS_Store
+Vagrant
