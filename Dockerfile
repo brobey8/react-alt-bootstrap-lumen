@@ -73,6 +73,3 @@ CMD ["service", "php5-fpm", "start"]
 CMD ["service", "nginx", "start"]
 CMD ["/usr/local/bin/start.sh"]
 
-# DO THE THINGS
-RUN cd /var/www; npm install; gulp
-RUN cd /var/www/remote/server; composer install; cp .env.example .env
