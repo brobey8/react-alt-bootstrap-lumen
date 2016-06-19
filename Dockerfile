@@ -65,6 +65,10 @@ RUN gem install sass
 EXPOSE 80
 EXPOSE 443
 
+#fix permissions for daemon
+WORKDIR /usr/local/bin
+RUN chmod +x start.sh
+
 # Default command for container, start supervisor
 CMD ["supervisord", "--nodaemon"]
 #CMD ["service", "mysql", "start"]
